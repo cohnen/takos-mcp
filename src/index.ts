@@ -8,7 +8,7 @@ import { formatProjectsList, rerankProjects } from "./lib/utils.js";
 
 // Create server instance
 const server = new McpServer({
-  name: "Context7",
+  name: "Takos",
   description: "Retrieves up-to-date documentation and code examples for any library.",
   version: "1.0.0",
   capabilities: {
@@ -17,10 +17,10 @@ const server = new McpServer({
   },
 });
 
-// Register Context7 tools
+// Register Takos tools
 server.tool(
   "resolve-library-id",
-  "Required first step: Resolves a general package name into a Context7-compatible library ID. Must be called before using 'get-library-docs' to retrieve a valid Context7-compatible library ID.",
+  "Required first step: Resolves a general package name into a Takos-compatible library ID. Must be called before using 'get-library-docs' to retrieve a valid Takos-compatible library ID.",
   {
     libraryName: z
       .string()
@@ -35,7 +35,7 @@ server.tool(
         content: [
           {
             type: "text",
-            text: "Failed to retrieve library documentation data from Context7",
+            text: "Failed to retrieve library documentation data from Takos",
           },
         ],
       };
@@ -66,7 +66,7 @@ server.tool(
       content: [
         {
           type: "text",
-          text: "Available libraries and their Context7-compatible library ID:\n\n" + projectsText,
+          text: "Available libraries and their Takos-compatible library ID:\n\n" + projectsText,
         },
       ],
     };
@@ -75,12 +75,12 @@ server.tool(
 
 server.tool(
   "get-library-docs",
-  "Fetches up-to-date documentation for a library. You must call 'resolve-library-id' first to obtain the exact Context7-compatible library ID required to use this tool.",
+  "Fetches up-to-date documentation for a library. You must call 'resolve-library-id' first to obtain the exact Takos-compatible library ID required to use this tool.",
   {
-    context7CompatibleLibraryID: z
+    takosCompatibleLibraryID: z
       .string()
       .describe(
-        "Exact Context7-compatible library ID (e.g., 'mongodb/docs', 'vercel/nextjs') retrieved from 'resolve-library-id'."
+        "Exact Takos-compatible library ID (e.g., 'mongodb/docs', 'vercel/nextjs') retrieved from 'resolve-library-id'."
       ),
     topic: z
       .string()
@@ -94,9 +94,9 @@ server.tool(
         "Maximum number of tokens of documentation to retrieve (default: 5000). Higher values provide more context but consume more tokens."
       ),
   },
-  async ({ context7CompatibleLibraryID, tokens = 5000, topic = "" }) => {
+  async ({ takosCompatibleLibraryID, tokens = 5000, topic = "" }) => {
     const documentationText = await fetchLibraryDocumentation(
-      context7CompatibleLibraryID,
+      takosCompatibleLibraryID,
       tokens,
       topic
     );
@@ -106,7 +106,7 @@ server.tool(
         content: [
           {
             type: "text",
-            text: "Documentation not found or not finalized for this library. This might have happened because you used an invalid Context7-compatible library ID. To get a valid Context7-compatible library ID, use the 'resolve-library-id' with the package name you wish to retrieve documentation for.",
+            text: "Documentation not found or not finalized for this library. This might have happened because you used an invalid Takos-compatible library ID. To get a valid Takos-compatible library ID, use the 'resolve-library-id' with the package name you wish to retrieve documentation for.",
           },
         ],
       };
@@ -126,7 +126,7 @@ server.tool(
 async function main() {
   const transport = new StdioServerTransport();
   await server.connect(transport);
-  console.error("Context7 Documentation MCP Server running on stdio");
+  console.error("Takos Documentation MCP Server running on stdio");
 }
 
 main().catch((error) => {

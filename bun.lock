@@ -2,7 +2,7 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {
-      "name": "context7-mcp",
+      "name": "takos-mcp",
       "dependencies": {
         "@modelcontextprotocol/sdk": "^1.8.0",
         "zod": "^3.24.2",

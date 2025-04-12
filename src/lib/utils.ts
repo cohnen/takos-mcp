@@ -6,7 +6,7 @@ import { Project } from "./types.js";
  * @returns Formatted project string
  */
 export function formatProject(project: Project): string {
-  return `Title: ${project.settings.title}\nContext7-compatible library ID: ${project.settings.project}\n`;
+  return `Title: ${project.settings.title}\nTakos-compatible library ID: ${project.settings.project}\n`;
 }
 
 /**

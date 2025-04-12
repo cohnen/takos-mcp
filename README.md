@@ -1,6 +1,6 @@
-# Context7 MCP - Up-to-date Docs For Any Cursor Prompt
+# Takos MCP - Up-to-date Docs For Any Cursor Prompt
 
-## ❌ Without Context7
+## ❌ Without Takos
 
 LLMs rely on outdated or generic information about the libraries you use. You get:
 
@@ -8,28 +8,28 @@ LLMs rely on outdated or generic information about the libraries you use. You ge
 - ❌ Hallucinated APIs don't even exist
 - ❌ Generic answers for old package versions
 
-## ✅ With Context7
+## ✅ With Takos
 
-Context7 MCP pulls up-to-date, version-specific documentation and code examples straight from the source — and places them directly into your prompt.
+Takos MCP pulls up-to-date, version-specific documentation and code examples straight from the source — and places them directly into your prompt.
 
-Add `use context7` to your question in Cursor:
-
-```
-"How do I use the new Next.js `after` function? use context7"
-```
+Add `use takos` to your question in Cursor:
 
 ```
-"How do I invalidate a query in React Query? use context7"
+"How do I use the new Next.js `after` function? use takos"
 ```
 
 ```
-"How do I protect a route with NextAuth? use context7"
+"How do I invalidate a query in React Query? use takos"
 ```
 
-Context7 fetches up-to-date documentation and working code examples right into your LLM’s context.
+```
+"How do I protect a route with NextAuth? use takos"
+```
+
+Takos fetches up-to-date documentation and working code examples right into your LLM's context.
 
 - 1️⃣ Ask your question naturally
-- 2️⃣ Tell the LLM to `use context7`
+- 2️⃣ Tell the LLM to `use takos`
 - 3️⃣ Get working code answers
 
 No tab-switching, no hallucinated APIs that don't exist, no outdated code generations.
@@ -50,9 +50,9 @@ Paste this into your Cursor `~/.cursor/mcp.json` file. See [Cursor MCP docs](htt
 ```json
 {
   "mcpServers": {
-    "context7": {
+    "takos": {
       "command": "npx",
-      "args": ["-y", "@upstash/context7-mcp"]
+      "args": ["-y", "@upstash/takos-mcp"]
     }
   }
 }
@@ -65,9 +65,9 @@ Add this to your Windsurf MCP config file. See [Windsurf MCP docs](https://docs.
 ```json
 {
   "mcpServers": {
-    "context7": {
+    "takos": {
       "command": "npx",
-      "args": ["-y", "@upstash/context7-mcp"]
+      "args": ["-y", "@upstash/takos-mcp"]
     }
   }
 }
@@ -75,10 +75,10 @@ Add this to your Windsurf MCP config file. See [Windsurf MCP docs](https://docs.
 
 ### Available Tools
 
-- `resolve-library-id`: Resolves a general library name into a Context7-compatible library ID.
+- `resolve-library-id`: Resolves a general library name into a Takos-compatible library ID.
   - `libraryName` (optional): Search and rerank results
-- `get-library-docs`: Fetches documentation for a library using a Context7-compatible library ID.
-  - `context7CompatibleLibraryID` (required)
+- `get-library-docs`: Fetches documentation for a library using a Takos-compatible library ID.
+  - `takosCompatibleLibraryID` (required)
   - `topic` (optional): Focus the docs on a specific topic (e.g., "routing", "hooks")
   - `tokens` (optional, default 5000): Max number of tokens to return
 
@@ -101,9 +101,9 @@ bun run build
 ```json
 {
   "mcpServers": {
-    "context7": {
+    "takos": {
       "command": "npx",
-      "args": ["tsx", "/path/to/folder/context7-mcp/src/index.ts"]
+      "args": ["tsx", "/path/to/folder/takos-mcp/src/index.ts"]
     }
   }
 }
@@ -112,7 +112,7 @@ bun run build
 ### Testing with MCP Inspector
 
 ```bash
-npx -y @modelcontextprotocol/inspector npx @upstash/context7-mcp
+npx -y @modelcontextprotocol/inspector npx @upstash/takos-mcp
 ```
 
 ## License

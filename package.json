@@ -1,7 +1,7 @@
 {
-  "name": "@upstash/context7-mcp",
+  "name": "@upstash/takos-mcp",
   "version": "1.0.0",
-  "description": "MCP server for Context7",
+  "description": "MCP server for Takos",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc && chmod 755 dist/index.js",
@@ -10,22 +10,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/upstash/context7-mcp.git"
+    "url": "git+https://github.com/upstash/takos-mcp.git"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "type": "module",
   "bin": {
-    "context7-mcp": "dist/index.js"
+    "takos-mcp": "dist/index.js"
   },
   "files": [
     "dist"
   ],
   "bugs": {
-    "url": "https://github.com/upstash/context7-mcp/issues"
+    "url": "https://github.com/upstash/takos-mcp/issues"
   },
-  "homepage": "https://github.com/upstash/context7-mcp#readme",
+  "homepage": "https://github.com/upstash/takos-mcp#readme",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.8.0",
     "zod": "^3.24.2"

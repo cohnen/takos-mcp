@@ -1,14 +1,14 @@
 import { Project } from "./types.js";
 
-const CONTEXT7_BASE_URL = "https://context7.com";
+const TAKOS_BASE_URL = "https://context7.com";
 
 /**
- * Fetches projects from the Context7 API
+ * Fetches projects from the Takos API
  * @returns Array of projects or null if the request fails
  */
 export async function fetchProjects(): Promise<Project[] | null> {
   try {
-    const response = await fetch(`${CONTEXT7_BASE_URL}/api/projects`);
+    const response = await fetch(`${TAKOS_BASE_URL}/api/projects`);
     if (!response.ok) {
       console.error(`Failed to fetch projects: ${response.status}`);
       return null;
@@ -46,7 +46,7 @@ export async function fetchLibraryDocumentation(
       basePath = path;
       folders = foldersParam;
     }
-    let contextURL = `${CONTEXT7_BASE_URL}/${basePath}/llms.txt`;
+    let contextURL = `${TAKOS_BASE_URL}/${basePath}/llms.txt`;
     const params = [];
     if (folders) {
       params.push(`folders=${encodeURIComponent(folders)}`);
