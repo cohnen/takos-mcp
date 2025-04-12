@@ -10,10 +10,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/upstash/takos-mcp.git"
+    "url": "git+https://github.com/cohnen/takos-mcp.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "cohnen",
   "license": "MIT",
   "type": "module",
   "bin": {
@@ -23,9 +23,9 @@
     "dist"
   ],
   "bugs": {
-    "url": "https://github.com/upstash/takos-mcp/issues"
+    "url": "https://github.com/cohnen/takos-mcp/issues"
   },
-  "homepage": "https://github.com/upstash/takos-mcp#readme",
+  "homepage": "https://github.com/cohnen/takos-mcp#readme",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.8.0",
     "zod": "^3.24.2"
