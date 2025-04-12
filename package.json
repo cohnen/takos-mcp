@@ -1,5 +1,5 @@
 {
-  "name": "@upstash/takos-mcp",
+  "name": "@takosai/takos-mcp",
   "version": "1.0.0",
   "description": "MCP server for Takos",
   "scripts": {

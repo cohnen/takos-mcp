@@ -52,7 +52,7 @@ Paste this into your Cursor `~/.cursor/mcp.json` file. See [Cursor MCP docs](htt
   "mcpServers": {
     "takos": {
       "command": "npx",
-      "args": ["-y", "@upstash/takos-mcp"]
+      "args": ["-y", "@takosai/takos-mcp"]
     }
   }
 }
@@ -67,7 +67,7 @@ Add this to your Windsurf MCP config file. See [Windsurf MCP docs](https://docs.
   "mcpServers": {
     "takos": {
       "command": "npx",
-      "args": ["-y", "@upstash/takos-mcp"]
+      "args": ["-y", "@takosai/takos-mcp"]
     }
   }
 }
@@ -78,7 +78,7 @@ Add this to your Windsurf MCP config file. See [Windsurf MCP docs](https://docs.
 - `resolve-library-id`: Resolves a general library name into a Takos-compatible library ID.
   - `libraryName` (optional): Search and rerank results
 - `get-library-docs`: Fetches documentation for a library using a Takos-compatible library ID.
-  - `takosCompatibleLibraryID` (required)
+  - `context7CompatibleLibraryID` (required)
   - `topic` (optional): Focus the docs on a specific topic (e.g., "routing", "hooks")
   - `tokens` (optional, default 5000): Max number of tokens to return
 
@@ -112,7 +112,7 @@ bun run build
 ### Testing with MCP Inspector
 
 ```bash
-npx -y @modelcontextprotocol/inspector npx @upstash/takos-mcp
+npx -y @modelcontextprotocol/inspector npx @takosai/takos-mcp
 ```
 
 ## License

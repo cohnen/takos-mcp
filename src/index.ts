@@ -77,7 +77,7 @@ server.tool(
   "get-library-docs",
   "Fetches up-to-date documentation for a library. You must call 'resolve-library-id' first to obtain the exact Takos-compatible library ID required to use this tool.",
   {
-    takosCompatibleLibraryID: z
+    context7CompatibleLibraryID: z
       .string()
       .describe(
         "Exact Takos-compatible library ID (e.g., 'mongodb/docs', 'vercel/nextjs') retrieved from 'resolve-library-id'."
@@ -94,9 +94,9 @@ server.tool(
         "Maximum number of tokens of documentation to retrieve (default: 5000). Higher values provide more context but consume more tokens."
       ),
   },
-  async ({ takosCompatibleLibraryID, tokens = 5000, topic = "" }) => {
+  async ({ context7CompatibleLibraryID, tokens = 5000, topic = "" }) => {
     const documentationText = await fetchLibraryDocumentation(
-      takosCompatibleLibraryID,
+      context7CompatibleLibraryID,
       tokens,
       topic
     );
